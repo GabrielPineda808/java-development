@@ -59,15 +59,15 @@ public class RentalCarCalculator {
                     "Your rental will begin on " + date+
                     "\n"+
                     "You will be renting for " + days + " days \n" +
-                    "The total cost of the Electronic Toll Tag add on will be  $" + etag+
+                    "The total cost of the Electronic Toll Tag add on will be  $%.2f" +
                     "\n"
-                    +"The total cost of the GPS add on will be $"+gps+
+                    +"The total cost of the GPS add on will be $%.2f"+
                     "\n"
-                    +"The total cost for Road Side Assistance will be $"+road+
+                    +"The total cost for Road Side Assistance will be $%.2f"+
                     "\n"
-                    +"You will be charged an additional fees for being under the age of 25 which amount to $%.2f", yTotal);
+                    +"You will be charged an additional fees for being under the age of 25 which amount to $%.2f \n"+
+                    "Your total cost will be $%.2f", etag,gps,road,yTotal,young);
 
-            System.out.printf("\n"+"Your total cost will be $%.2f", young);
         }
         else {
             double total = (basePrice*days)+etag+gps+road;
