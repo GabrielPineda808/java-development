@@ -37,10 +37,10 @@ public class FullNameParser {
     }
 
     public static String[] split(String name){
-        String[] n = name.split("\\s");
+        String[] n = name.split("\\s+");
         return n;
     }
-    
+
 //    public static int choice(){
 //        System.out.println("Welcome to our Full Name Parser app.\n" +
 //                "Please select one of the following formats: \n" +
