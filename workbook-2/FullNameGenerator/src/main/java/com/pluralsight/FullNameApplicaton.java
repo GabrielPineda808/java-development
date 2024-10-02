@@ -6,6 +6,9 @@ public class FullNameApplicaton {
     public static void main(String[] args) {
         String f = ans("Please enter your first name: ");
         String l = ans("Please enter your last name: ");
+
+        nCheck(f,l);
+
         String m = ans("Please enter your middle initial: ");
         String s = ans("Please enter a suffix :");
 
@@ -18,13 +21,26 @@ public class FullNameApplicaton {
     }
 
     public static void name(String f, String l, String m, String s){
-         String fname = "";
-
-        if(!f.isEmpty() && !l.isEmpty()){
+        String fname = "";
+        while(!f.isEmpty() &&!l.isEmpty()){
             fname += f + " ";
-            fname += l + " ";
+            if (!m.isEmpty()){
+                fname += m + ". ";
+            }
+            fname += l;
+            if(!s.isEmpty()){
+                fname += ", " + s;
+            }
+            System.out.println(fname);
+            f = "";
+            l = "";
         }
+    }
 
-        System.out.println(fname);
+    public static void nCheck(String f, String l){
+        if (l.isEmpty() && f.isEmpty()){
+            System.out.println("Please enter both a First and a Last name to continue.");
+            System.exit(0);
+        }
     }
 }
