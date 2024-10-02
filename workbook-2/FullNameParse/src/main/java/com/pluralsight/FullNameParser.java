@@ -41,6 +41,8 @@ public class FullNameParser {
         return n;
     }
 
+    //CODE BELOW WAS MADE TO HAVE THE OUTPUT FORMAT BE A CHOICE REGARDLESS IF MIDDLE NAME IS PROVIDED OR NOT
+
 //    public static int choice(){
 //        System.out.println("Welcome to our Full Name Parser app.\n" +
 //                "Please select one of the following formats: \n" +
