@@ -4,23 +4,26 @@ import java.util.Scanner;
 public class App 
 {
     static Scanner s = new Scanner(System.in);
+    static StringBuilder addy = new StringBuilder();
 
     public static void main( String[] args )
     {
-        String name = ans("Please enter your full name: ");
+        addy.append(ans("Hello and Welcome to the Address Builder App \n" +
+                "Please enter your full name: "));
+        prompt("billing");
+        ship();
+    }
 
-        System.out.println("Please enter your billing info below \n");
+    public static String prompt(String s){
+        addy.append(ans("Please enter your "+ s +" street: "));
+        addy.append("\n");
+        addy.append(ans("Please enter your "+ s +" city: "));
+        addy.append(", ");
+        addy.append(ans("Please enter your "+ s +" state: ").toUpperCase());
+        addy.append("\n");
+        addy.append(ans("Please enter your "+ s +" zip code: "));
 
-        String bStreet = ans("Please enter your billing street: ");
-        String bCity = ans("Please enter your billing city: ");
-        String bState = ans("Please enter your billing state: ").toUpperCase();
-        String bZip = ans("Please enter your billing zip code: ");
-        String choice = ans("Is your shipping address the same as your billing address? (y/n)");
-
-        String billing = build(bStreet,bCity,bState,bZip);
-
-        ship(name,billing,choice);
-
+        return addy.toString();
     }
 
     public static String ans(String message){
@@ -28,33 +31,16 @@ public class App
         return s.nextLine().trim();
     }
 
-    public static String build(String s, String c, String st, String z){
-        StringBuilder addy = new StringBuilder();
-        addy.append(s);
-        addy.append("\n");
-        addy.append(c);
-        addy.append(" ");
-        addy.append(st);
-        addy.append(", ");
-        addy.append(z);
-        return addy.toString();
-    }
-
-    public static void ship(String n, String a, String c){
-
+    public static void ship(){
+        String c = ans("Is your shipping address the same as your billing address? (y/n)");
         switch (c.toLowerCase()){
             case "n":
                 System.out.println("Please enter your shipping info below: \n");
-
-                String sStreet = ans("Please enter your shipping street: ");
-                String sCity = ans("Please enter your shipping city: ");
-                String sState = ans("Please enter your shipping state: ").toUpperCase();
-                String sZip = ans("Please enter your shipping zip code: ");
-                String ship = build(sStreet,sCity,sState,sZip);
-                System.out.println(n +"\n \nBilling Address: \n"+ a +"\n \nShipping Address: \n"+ ship);
+                String s =prompt("shipping");
+                System.out.println("\n \nBilling Address: \n"+ addy +"\n \nShipping Address: \n"+ s);
                 break;
             case "y":
-                System.out.println(n +"\n \nBilling Address: \n"+ a +"\n \nShipping Address: \n"+ a);
+                System.out.println("\n \nBilling Address: \n"+ addy +"\n \nShipping Address: \n"+ addy);
                 break;
             default:
                 System.out.println("Please enter a valid answer and try again.");
