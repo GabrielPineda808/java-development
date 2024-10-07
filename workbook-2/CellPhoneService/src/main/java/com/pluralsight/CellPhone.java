@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class CellPhone {
     static Scanner s = new Scanner(System.in);
-    private final int serialNumber;
-    private final String model;
-    private final String carrier;
-    private final String phoneNumber;
-    private final String owner;
+    private int serialNumber;
+    private String model;
+    private String carrier;
+    private String phoneNumber;
+    private String owner;
 
     public CellPhone(){
         System.out.println("What is the serial number? ");
@@ -22,12 +22,19 @@ public class CellPhone {
         System.out.println("Who is the owner of the phone?");
         this.owner = s.nextLine();
     }
-    public static void display(CellPhone phone) {
-        System.out.println(phone.getSerialNumber());
-        System.out.println(phone.getModel());
-        System.out.println(phone.getCarrier());
-        System.out.println(phone.getPhoneNumber());
-        System.out.println(phone.getOwner());
+    public CellPhone(int serialNumber,String model, String carrier, String phoneNumber, String owner){
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
+    }
+    public void display() {
+        System.out.println(this.serialNumber);
+        System.out.println(this.model);
+        System.out.println(this.carrier);
+        System.out.println(this.phoneNumber);
+        System.out.println(this.owner);
     }
 
     public int getSerialNumber(){
