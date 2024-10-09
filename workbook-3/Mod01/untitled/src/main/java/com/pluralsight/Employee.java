@@ -1,23 +1,23 @@
 package com.pluralsight;
 
 public class Employee {
-    private String employeeId;
+    private int employeeId;
     private String name;
     private float hoursWorked;
     private float payRate;
 
     public Employee(String employeeId, String name, String hoursWorked, String payRate) {
-        this.employeeId = employeeId;
+        this.employeeId = Integer.parseInt(employeeId);
         this.name = name;
         this.hoursWorked = Float.parseFloat(hoursWorked);
         this.payRate = Float.parseFloat(payRate);
     }
 
-    public String getEmployeeId() {
+    public int getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(String employeeId) {
+    public void setEmployeeId(int employeeId) {
         this.employeeId = employeeId;
     }
 
