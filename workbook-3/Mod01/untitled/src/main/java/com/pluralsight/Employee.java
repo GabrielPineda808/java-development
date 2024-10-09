@@ -1,23 +1,23 @@
 package com.pluralsight;
 
 public class Employee {
-    private int employeeId;
+    private String employeeId;
     private String name;
-    private float hoursWorked;
-    private float payRate;
+    private String hoursWorked;
+    private String payRate;
 
     public Employee(String employeeId, String name, String hoursWorked, String payRate) {
-        this.employeeId = Integer.parseInt(employeeId);
+        this.employeeId = employeeId;
         this.name = name;
-        this.hoursWorked = Float.parseFloat(hoursWorked);
-        this.payRate = Float.parseFloat(payRate);
+        this.hoursWorked = hoursWorked;
+        this.payRate = payRate;
     }
 
     public int getEmployeeId() {
-        return employeeId;
+        return Integer.parseInt(employeeId);
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
 
@@ -30,22 +30,28 @@ public class Employee {
     }
 
     public float getHoursWorked() {
-        return hoursWorked;
+        return Float.parseFloat(hoursWorked);
     }
 
-    public void setHoursWorked(float hoursWorked) {
+    public void setHoursWorked(String hoursWorked) {
         this.hoursWorked = hoursWorked;
     }
 
     public float getPayRate() {
-        return payRate;
+        return Float.parseFloat(payRate);
     }
 
-    public void setPayRate(float payRate) {
+    public void setPayRate(String payRate) {
         this.payRate = payRate;
     }
 
-    public void getGrossPay(){
-        System.out.println(this.hoursWorked*this.payRate + "\n");
+    public float getGrossPay(){
+        return Float.parseFloat(this.hoursWorked)*Float.parseFloat(this.payRate);
+    }
+    public String display(){
+        int i = this.getEmployeeId();
+        String n = this.getName() + " ";
+
+        return i+ " " + n +" "+ getPayRate();
     }
 }
