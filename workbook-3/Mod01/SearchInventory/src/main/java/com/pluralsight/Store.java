@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 public class Store {
     // the key is the product id, the value is a product object
-    static HashMap<String, Product> inventory =
-            new HashMap<String, Product>();
+    static HashMap<String, Product> inventory = new HashMap<>();
+
     public static void main(String[] args) throws IOException {
 // this method loads product objects into inventory
         loadInventory();
