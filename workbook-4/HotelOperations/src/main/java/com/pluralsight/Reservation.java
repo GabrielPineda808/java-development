@@ -1,5 +1,7 @@
 package com.pluralsight;
 
+import java.io.IOException;
+
 public class Reservation {
     private String roomType;
     private int numberOfNights;
@@ -16,7 +18,9 @@ public class Reservation {
     }
 
     public void setRoomType(String roomType) {
-        this.roomType = roomType;
+            if(roomType.equalsIgnoreCase("king") || roomType.equalsIgnoreCase("double")){
+                this.roomType = roomType;
+            }
     }
 
     public int getNumberOfNights() {
@@ -38,11 +42,9 @@ public class Reservation {
     public double getPrice(){
         if(roomType.equalsIgnoreCase("king")){
             return 139.00*numberOfNights;
-        }else if(roomType.equalsIgnoreCase("double")){
-            return 124.00*numberOfNights;
         }
-        return 0;
 
+        return 124.00*numberOfNights;
     }
 
     public double getReservationTotal(){
@@ -52,7 +54,6 @@ public class Reservation {
         }else {
             total = getPrice();
         }
-
         return total;
 
     }
