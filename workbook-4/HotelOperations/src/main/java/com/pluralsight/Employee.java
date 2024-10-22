@@ -80,4 +80,7 @@ public class Employee {
         }
         return 0;
     }
+    public void punchTimeCard(double timeIn, double timeOut){
+        setHoursWorked((Math.abs(timeIn - timeOut)));
+    }
 }
