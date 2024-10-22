@@ -43,18 +43,14 @@ public class Reservation {
         if(roomType.equalsIgnoreCase("king")){
             return 139.00*numberOfNights;
         }
-
         return 124.00*numberOfNights;
     }
 
     public double getReservationTotal(){
-        double total;
         if(isWeekend){
-            total = getPrice() + (getPrice() * 0.10);
-        }else {
-            total = getPrice();
+            return getPrice()*1.10;
         }
-        return total;
+        return getPrice();
 
     }
 }
