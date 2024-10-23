@@ -62,11 +62,12 @@ public class Hotel {
     }
 
     public boolean bookRoom(int numberOfRooms, boolean isSuite){
-        if(isSuite && numberOfRooms < this.numberOfSuites){
+
+        if(isSuite && numberOfRooms <= this.numberOfSuites){
             this.bookedSuites += numberOfRooms;
             this.numberOfSuites -= numberOfRooms;
                 return true;
-        } else if (numberOfRooms < this.numberOfRooms) {
+        } else if (numberOfRooms <= this.numberOfRooms) {
             this.bookedBasicRooms += numberOfRooms;
             this.numberOfRooms -= numberOfRooms;
             return true;
@@ -75,9 +76,13 @@ public class Hotel {
         return false;
     }
 
+    public int getAvailableSuites(){
+        return numberOfSuites;
+    }
 
-
-
+    public int getAvailableRooms(){
+        return numberOfRooms;
+    }
 
 
 

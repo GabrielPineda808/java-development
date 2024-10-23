@@ -18,6 +18,10 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
+    public Employee(){
+
+    }
+
     public int getEmployeeId() {
         return employeeId;
     }
@@ -94,9 +98,9 @@ public class Employee {
         return hours+minutes;
     }
 
-    public double punchOut(double time){
+    public void punchOut(double punchIn,double time){
 
-        return time;
+        hoursWorked += Math.abs(punchIn-time);
     }
 
     public double punchOut(){
