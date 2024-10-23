@@ -21,6 +21,14 @@ class RoomTest {
         assertTrue(room.isDirty(), "The room is dirty");
     }
 
+    @org.junit.jupiter.api.Test
+    void checkIn_canCheckIn() {
+        Room room = new Room();
+
+        assertFalse(room.isDirty(), "The room is not dirty");
+        assertFalse(room.isOccupied(), "The room is not occupied");
+    }
+
     @Test
     void checkOut_isOccupied() {
         Room room = new Room();
@@ -42,6 +50,7 @@ class RoomTest {
 
         assertTrue(room.isOccupied(), "The room is occupied. You cannot clean this room.");
     }
+
 
 
 

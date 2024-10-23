@@ -3,8 +3,8 @@ package com.pluralsight;
 public class Room {
     private int numberOfBeds;
     private float price;
-    private boolean isOccupied = true;
-    private boolean isDirty = true;
+    private boolean isOccupied;
+    private boolean isDirty;
 
     public Room(int numberOfBeds, float price, boolean isOccupied, boolean isDirty) {
         this.numberOfBeds = numberOfBeds;
